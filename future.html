@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>挑戰與展望｜在地共生型服務研究</title>
+<meta name="description" content="四大挑戰、可能的解方、團隊的反思。在地共生服務在台灣落地的下一步可能是什麼？" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.challenge-block {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 32px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+.challenge-block:last-child { border-bottom: none; }
+.challenge-num {
+  font-family: var(--font-num);
+  font-size: 84px;
+  font-weight: 500;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+.challenge-content h3 {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  color: var(--primary);
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+.challenge-tag {
+  display: inline-block;
+  background: var(--bg-alt);
+  color: var(--ink-soft);
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+@media (max-width:640px){
+  .challenge-block{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .challenge-num{font-size:56px;}
+  .challenge-content h3{font-size:22px;}
+}
+.solution-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  padding: 28px;
+  margin: 24px 0;
+  border-radius: 0 8px 8px 0;
+}
+.solution-card h4 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0;
+  color: var(--primary);
+}
+.solution-card h4::before {
+  content: "→";
+  color: var(--accent);
+  font-size: 24px;
+}
+.team-card {
+  text-align: center;
+  padding: 32px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.team-avatar {
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 36px;
+  color: #fff;
+  font-weight: 500;
+}
+.team-card.alt .team-avatar {
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+}
+.team-card h3 {
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+.team-card .team-role {
+  color: var(--ink-light);
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+.reference-list li {
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+.reference-list li:last-child { border-bottom: none; }
+</style>
+</head>
+<body>
+
+<!-- 導覽列 -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      在地共生
+      <small>SYMBIOTIC CARE · A STUDENT INQUIRY</small>
+    </div>
+    <button class="nav-toggle">選單</button>
+    <ul class="nav-links">
+      <li><a href="index.html">首頁</a></li>
+      <li><a href="concept.html">什麼是在地共生</a></li>
+      <li><a href="chiayi.html">嘉義實驗</a></li>
+      <li><a href="survey.html">問卷研究</a></li>
+      <li><a href="interview.html">訪談研究</a></li>
+      <li><a href="future.html">挑戰與展望</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow fade-in">CHAPTER 05</div>
+    <h1 class="fade-in delay-1">
+      不是答案，<br>
+      而是下一個問題。
+    </h1>
+    <p class="hero-sub fade-in delay-2">
+      經過一學期的閱讀、寄信、訪談，<br>
+      我們沒有得出「在地共生在台灣可不可行」的最終答案。<br>
+      但我們看見了四個必須先處理的挑戰，<br>
+      以及一個可能的、台灣版本的雛形。
+    </p>
+  </div>
+</section>
+
+<!-- 四大挑戰 -->
+<section class="section" style="padding-top:30px;">
+  <div class="container-narrow">
+    <div class="reveal">
+      <div class="section-eyebrow">01 · FOUR CHALLENGES</div>
+      <h2>四個必須面對的挑戰</h2>
+      <p class="lead">
+        從問卷與訪談中，我們整理出共生服務在台灣落地時，
+        最頻繁被提及的<strong>四個結構性挑戰</strong>。
+        每一個都不是「想做就做」可以解決的。
+      </p>
+
+      <div class="reveal">
+        <div class="challenge-block">
+          <div class="challenge-num">01</div>
+          <div class="challenge-content">
+            <span class="challenge-tag">LAW · 法規制度</span>
+            <h3>長照、身障、勞工，三套體系各自運作</h3>
+            <p>
+              台灣現行的福利政策是以「身分別」切割的——
+              長照在衛福部、身障的就業在勞動部、社政與衛政之間也彼此分開。
+              預算、人員、資格、評估工具，全部不一樣。
+            </p>
+            <p style="margin-bottom:0;">
+              一個高齡身障者要使用服務，必須<strong>同時通過多個系統的評估</strong>，
+              資源也彼此不相通。問卷中有 <strong style="color:var(--accent);">51 份</strong>回覆指出這是最大障礙。
+            </p>
+          </div>
+        </div>
+
+        <div class="challenge-block">
+          <div class="challenge-num">02</div>
+          <div class="challenge-content">
+            <span class="challenge-tag">EXPERTISE · 專業跨域</span>
+            <h3>沒有人「同時懂」高齡與身障</h3>
+            <p>
+              訪談學者直言：「特教加高齡比較容易，但要從長照人員去學身障，難度更高」。
+              因為身障領域涵蓋的障別非常多元，個別差異也大，
+              不是上幾堂課就能掌握的專業。
+            </p>
+            <p style="margin-bottom:0;">
+              問卷中 <strong style="color:var(--accent);">47 份</strong>回覆擔心「工作人員缺乏跨領域專業能力」。
+              這不是培訓課程能輕易解決的——還涉及到<strong>職業認證、薪資結構、人力來源</strong>等多重問題。
+            </p>
+          </div>
+        </div>
+
+        <div class="challenge-block">
+          <div class="challenge-num">03</div>
+          <div class="challenge-content">
+            <span class="challenge-tag">SPACE · 空間設施</span>
+            <h3>「通用設計」聽起來簡單，做起來很難</h3>
+            <p>
+              現有長照據點的空間設計，主要考慮長者的需求（無障礙坡道、扶手）。
+              但身障者的需求更多元——
+              情緒障礙者需要<strong>冷靜空間</strong>、感官敏感者需要<strong>低刺激區</strong>、
+              智能障礙者可能需要<strong>視覺引導</strong>。
+            </p>
+            <p style="margin-bottom:0;">
+              更現實的是，當衝突發生時，據點通常<mark>沒有「獨立空間」</mark>讓兩方暫時分開緩和。
+              這是嘉義實驗中具體被點出的硬體限制。
+            </p>
+          </div>
+        </div>
+
+        <div class="challenge-block">
+          <div class="challenge-num">04</div>
+          <div class="challenge-content">
+            <span class="challenge-tag">CULTURE · 觀念文化</span>
+            <h3>世代差異與刻板印象</h3>
+            <p>
+              現在 80 歲以上的長輩，是<strong>從未經歷融合教育</strong>的世代。
+              他們對身障者的第一印象往往不是「夥伴」，而是「需要被照顧的人」。
+              這種預設讓「身障者照顧長者」的想法，
+              對長輩來說很難理解、也很難接受。
+            </p>
+            <p style="margin-bottom:0;">
+              但訪談中也指出，<mark>年輕世代對多元族群的接受度高</mark>。
+              這個挑戰會隨時間自然改善，但需要時間。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 可能的解方 -->
+<section class="section" id="solutions" style="background:var(--bg-alt);">
+  <div class="container-narrow">
+    <div class="reveal">
+      <div class="section-eyebrow">02 · POSSIBLE PATHS</div>
+      <h2>幾個可能的「下一步」</h2>
+      <p class="lead">
+        在訪談與閱讀中，浮現了幾個值得認真討論的具體做法。
+        這些不是我們的「結論」，而是<strong>後續研究與政策可以接著去探索的方向</strong>。
+      </p>
+
+      <div class="solution-card reveal">
+        <h4>務實版本：從「後勤＋陪伴」開始</h4>
+        <p>
+          完全照抄日本「全融合」可能不適合台灣現階段。
+          但職重專員的洞見指出：<strong>身障者擔任後勤工作（換床、清潔、備餐），
+          同時在工作之餘與長輩有非正式互動</strong>——這是相對可行的路徑。
+        </p>
+        <p style="margin-bottom:0;font-size:14px;color:var(--ink-light);">
+          優點：可分階段建構、可避開「直接照顧」的高風險場景、可作為身障者進入正式職場的訓練。
+        </p>
+      </div>
+
+      <div class="solution-card reveal">
+        <h4>政策版本：「加值方案」附掛於現有計畫</h4>
+        <p>
+          嘉義實驗的研究團隊建議：把共生服務做成「<strong>加值方案（外掛）</strong>」，
+          類似保險的主附約概念。機構原本就在做長照，可以另外申請共生服務計畫，
+          自行決定要不要承接。
+        </p>
+        <p style="margin-bottom:0;font-size:14px;color:var(--ink-light);">
+          優點：不需要建立新體系、降低機構轉型門檻、可累積實驗資料。
+        </p>
+      </div>
+
+      <div class="solution-card reveal">
+        <h4>支持系統：常態性輔導團隊</h4>
+        <p>
+          機構願意做，但「不知道怎麼做」——
+          這是問卷反覆顯現的痛點。建議由政府或學術單位組成<strong>常態性輔導團隊</strong>，
+          提供諮詢、培訓、督導、資源連結，讓承接共生服務的機構不會孤立無援。
+        </p>
+        <p style="margin-bottom:0;font-size:14px;color:var(--ink-light);">
+          優點：可運用既有專業人力、解決機構量能不足問題、累積跨領域知識。
+        </p>
+      </div>
+
+      <div class="solution-card reveal">
+        <h4>場域選擇：從日照中心起步</h4>
+        <p>
+          訪談二的長照工作者指出：「<strong>住宿型機構的長輩比你們想像的還重</strong>」，
+          多半是已經失能或失智需要全天照顧者。共生服務直接放在住宿型機構，
+          會面臨太多臨床照顧的負荷。
+        </p>
+        <p style="margin-bottom:0;font-size:14px;color:var(--ink-light);">
+          建議：先從<strong>日照中心</strong>或<strong>巷弄長照站</strong>切入，
+          這裡的長輩功能相對良好，更能與身障者有互動空間。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 我們的反思 -->
+<section class="section" id="reflection">
+  <div class="container-narrow">
+    <div class="reveal">
+      <div class="section-eyebrow">03 · OUR REFLECTION</div>
+      <h2>我們學到的，不只是答案</h2>
+
+      <p class="lead">
+        作為兩個大一學生，做這份研究最深刻的收穫，
+        其實不是任何具體的「答案」，而是這幾個提醒——
+      </p>
+
+      <h3>① 不要太輕易把人定義為「弱勢」</h3>
+      <p>
+        訪談二的長照工作者問我們：「<strong>他們真的是弱勢嗎？</strong>」
+        這個問題打到我們了。我們研究一開始的預設，就是「身障者和高齡者是兩群弱勢」。
+        但訪談讓我們看到——這個預設本身可能就是<mark>限制想像的牆</mark>。
+        共生服務的精神，正是要打破這道牆。
+      </p>
+
+      <h3>② 制度問題不能用善意填補</h3>
+      <p>
+        我們一開始天真地想：「有愛心的人去做就好了」。
+        但訪談一次又一次告訴我們——當<strong>法規不相容、預算分屬不同單位、證照不互通</strong>時，
+        再有愛心的人都會被消磨。制度才是真正的關鍵。
+      </p>
+
+      <h3>③ 看得見現實，才能談理想</h3>
+      <p>
+        訪談二的學長直接告訴我們：「老闆只會選最簡單的方式」、
+        「<strong>錢很重要</strong>，業界第一個會看到錢」。
+        這些話讓我們從「應該怎樣」的理想國度，回到「實際上會怎樣」的真實世界。
+        理想終究要在現實中找到落腳處。
+      </p>
+
+      <h3>④ 學生研究的價值，在於提問</h3>
+      <p>
+        我們知道這份研究不會改變政策，也沒有得出嚴謹的學術結論。
+        但訪談三結束時，職重專員說：「<strong>你今天給我一個很好的 idea</strong>」——
+        那一刻我們知道，<mark>提問本身就有意義</mark>。
+        把這個冷門議題擺到更多人面前，讓更多人開始思考，就是學生研究最大的貢獻。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 一個邀請 -->
+<section class="section" style="background:var(--bg-alt);">
+  <div class="container-narrow">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-eyebrow">A INVITATION</div>
+      <h2>給每一個讀到這裡的人</h2>
+
+      <p class="lead">
+        如果你是<strong>長照或身障領域的工作者</strong>——<br>
+        我們希望這份研究能成為你跟夥伴討論的素材，無論你的結論是贊成還是反對。
+      </p>
+      <p class="lead">
+        如果你是<strong>學生或研究者</strong>——<br>
+        這個議題還有太多沒被回答的問題，希望能有更多人接手研究下去。
+      </p>
+      <p class="lead">
+        如果你是<strong>政策制定者</strong>——<br>
+        台灣高齡化的時間表已經非常緊迫了，傳統的「縱切式」服務模式真的需要被認真檢討。
+      </p>
+      <p class="lead">
+        如果你是<strong>身障者、高齡者，或他們的家人</strong>——<br>
+        我們很希望知道你怎麼看這件事。歡迎透過任何方式給我們意見。
+      </p>
+
+      <hr class="divider ornament">
+
+      <blockquote style="font-size:24px;text-align:center;border-left:none;padding:0;font-style:normal;color:var(--primary);max-width:600px;margin:48px auto;">
+        共生不是新點子，<br>
+        是我們很久以前就會的事，<br>
+        只是被現代的分類學切散了。
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- 研究團隊 -->
+<section class="section" id="team">
+  <div class="container-narrow">
+    <div class="reveal">
+      <div class="section-eyebrow">04 · TEAM</div>
+      <h2>研究團隊</h2>
+      <p>這份自主探究專題由我們兩個人完成。</p>
+
+      <div class="two-col" style="margin-top:40px;">
+        <div class="team-card">
+          <div class="team-avatar">温</div>
+          <h3>温佳縈</h3>
+          <div class="team-role">國立臺灣師範大學</div>
+        </div>
+        <div class="team-card alt">
+          <div class="team-avatar">吳</div>
+          <h3>吳心伶</h3>
+          <div class="team-role">國立臺灣師範大學</div>
+        </div>
+      </div>
+
+      <hr class="divider ornament">
+
+      <h3 style="text-align:center;">致謝</h3>
+      <p style="text-align:center;">
+        感謝接受我們訪談的<strong>特殊教育學者</strong>、<strong>長照領域工作者</strong>、
+        及<strong>職業重建工作者</strong>。<br>
+        感謝填寫問卷的全台 80 間機構工作者，謝謝你們願意花時間回應一份學生問卷。<br>
+        感謝指導我們的方老師，以及通識中心對自主探究的支持。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 參考資料 -->
+<section class="section" id="references" style="background:var(--bg-alt);">
+  <div class="container-narrow">
+    <div class="reveal">
+      <div class="section-eyebrow">05 · REFERENCES</div>
+      <h2>主要參考資料</h2>
+
+      <h3>核心文獻</h3>
+      <ul class="reference-list">
+        <li>
+          歐紫彤、鄭清霞、洪惠芬、李佩芳（2024）。〈障礙服務融入長照據點的在地共生型服務：嘉義實驗〉。
+          《臺灣社會福利學刊》，20(1)，1-50。DOI: 10.6265/TJSW.202406_20(1).01
+        </li>
+        <li>
+          蔡長穎（2025）。〈共生社區、共享幸福〉簡報。國立南華大學生死系社工組。
+        </li>
+        <li>
+          鄭清霞、藤森空美、歐紫彤、李佩芳、王靜怡（2021）。〈在地整合的共生照顧體系：日本佛子園行善寺〉。
+          《臺灣社會福利學刊》，17(2)，49-97。
+        </li>
+      </ul>
+
+      <h3>政府統計資料</h3>
+      <ul class="reference-list">
+        <li>衛生福利部（2025）。〈我國高齡人口統計資料〉。</li>
+        <li>勞動部（2024）。〈113 年 5 月身心障礙者勞動狀況調查〉。</li>
+        <li>衛生福利部統計處（2025）。〈全日型身心障礙者福利機構統計〉。</li>
+      </ul>
+
+      <h3>其他參考</h3>
+      <ul class="reference-list">
+        <li>厚生労働省（2018）。〈「地域共生社会」の実現に向けて〉。</li>
+        <li>富山型デイサービス（2009）。〈富山型デイサービス〉。</li>
+        <li>雲林縣衛生局（2025）。〈日本愛知縣豐田市「Soup Town」參訪紀錄〉。</li>
+      </ul>
+
+      <p style="margin-top:40px;font-size:14px;color:var(--ink-light);">
+        更完整的參考文獻請見論文原文。本網站僅列出對本研究影響最大的核心資料。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 回首頁 -->
+<section class="section" style="text-align:center;padding:60px 0 80px;">
+  <div class="container-narrow">
+    <p style="font-family:var(--font-serif);font-size:24px;color:var(--primary);margin-bottom:32px;">
+      謝謝你讀完這份研究。
+    </p>
+    <p>
+      <a href="index.html" style="display:inline-block;padding:14px 32px;background:var(--primary);color:#fff;border-radius:4px;font-weight:600;">
+        ← 回到首頁
+      </a>
+    </p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <h4>關於本研究</h4>
+        <p>
+          這是一份國立臺灣師範大學的學生自主探究專題，<br>
+          完成於 2026 年春學期。我們相信，問題的開始，比答案更重要。
+        </p>
+      </div>
+      <div>
+        <h4>研究團隊</h4>
+        <ul>
+          <li>温佳縈</li>
+          <li>吳心伶</li>
+        </ul>
+      </div>
+      <div>
+        <h4>網站章節</h4>
+        <ul>
+          <li><a href="concept.html" style="color:rgba(255,255,255,0.7);">什麼是在地共生</a></li>
+          <li><a href="chiayi.html" style="color:rgba(255,255,255,0.7);">嘉義實驗</a></li>
+          <li><a href="survey.html" style="color:rgba(255,255,255,0.7);">問卷研究</a></li>
+          <li><a href="interview.html" style="color:rgba(255,255,255,0.7);">訪談研究</a></li>
+          <li><a href="future.html" style="color:rgba(255,255,255,0.7);">挑戰與展望</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 温佳縈・吳心伶｜國立臺灣師範大學自主探究</span>
+      <span>本網站內容引用之訪談已徵得受訪者同意並予以匿名處理</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

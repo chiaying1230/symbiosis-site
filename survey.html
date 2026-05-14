@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>問卷研究｜1,125 封信、80 份回覆｜在地共生型服務研究</title>
+<meta name="description" content="我們以 Gmail 一封一封寄出 1,125 份問卷給全台長照與身障機構，收回 80 份有效回覆。看看台灣機構真實的態度。" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* 問卷頁面專屬樣式 */
+.envelope-viz {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 48px 0;
+  flex-wrap: wrap;
+}
+.envelope-viz .num-display {
+  text-align: center;
+}
+.envelope-viz .arrow {
+  font-size: 32px;
+  color: var(--accent);
+}
+.likert-chart {
+  display: grid;
+  grid-template-columns: 80px 1fr 60px;
+  gap: 12px;
+  align-items: center;
+  margin: 10px 0;
+}
+.likert-chart .label {
+  font-size: 14px;
+  color: var(--ink-soft);
+  text-align: right;
+}
+.likert-chart .count-num {
+  font-family: var(--font-num);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary);
+}
+.pie-mock {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 24px 0;
+}
+.pie-mock .seg {
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+}
+.pie-mock .seg .pct {
+  font-family: var(--font-num);
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.pie-mock .seg .name {
+  font-size: 13px;
+  letter-spacing: 0.05em;
+}
+.region-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+@media (max-width: 580px) {
+  .region-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.region-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px 16px;
+  text-align: center;
+}
+.region-card .region-name {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+.region-card .region-count {
+  font-family: var(--font-num);
+  font-size: 42px;
+  font-weight: 500;
+  color: var(--accent);
+  line-height: 1;
+}
+.region-card .region-bar {
+  height: 6px;
+  background: var(--bg-alt);
+  border-radius: 3px;
+  margin-top: 12px;
+  overflow: hidden;
+}
+.region-card .region-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 3px;
+  width: 0;
+  transition: width 1.4s cubic-bezier(.2,.8,.3,1);
+}
+</style>
+</head>
+<body>
+
+<!-- 導覽列 -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      在地共生
+      <small>SYMBIOTIC CARE · A STUDENT INQUIRY</small>
+    </div>
+    <button class="nav-toggle">選單</button>
+    <ul class="nav-links">
+      <li><a href="index.html">首頁</a></li>
+      <li><a href="concept.html">什麼是在地共生</a></li>
+      <li><a href="chiayi.html">嘉義實驗</a></li>
+      <li><a href="survey.html">問卷研究</a></li>
+      <li><a href="interview.html">訪談研究</a></li>
+      <li><a href="future.html">挑戰與展望</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow fade-in">CHAPTER 03</div>
+    <h1 class="fade-in delay-1">
+      我們寄了 1,125 封信，<br>
+      收到 80 份回信。
+    </h1>
+    <p class="hero-sub fade-in delay-2">
+      這份問卷沒有研究經費、沒有專業群發平台，<br>
+      只有兩個 Gmail 帳號，和一份願意做到底的耐心。<br>
+      我們想知道——全台灣的長照與身障機構，怎麼看「在地共生」這件事？
+    </p>
+  </div>
+</section>
+
+<!-- 問卷概況 -->
+<section class="section" style="padding-top:30px;">
+  <div class="container-narrow">
+    <div class="reveal">
+      <div class="section-eyebrow">01 · METHOD</div>
+      <h2>關於這份問卷</h2>
+
+      <div class="envelope-viz reveal">
+        <div class="num-display">
+          <div style="font-family:var(--font-num);font-size:72px;font-weight:500;color:var(--primary);line-height:1;" data-count="1125">0</div>
+          <div style="font-size:13px;color:var(--ink-light);letter-spacing:0.1em;margin-top:8px;">SENT · 寄出</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="num-display">
+          <div style="font-family:var(--font-num);font-size:72px;font-weight:500;color:var(--accent);line-height:1;" data-count="80">0</div>
+          <div style="font-size:13px;color:var(--ink-light);letter-spacing:0.1em;margin-top:8px;">RECEIVED · 回覆</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="num-display">
+          <div style="font-family:var(--font-num);font-size:72px;font-weight:500;color:var(--indigo);line-height:1;" data-count="27">0</div>
+          <div style="font-size:13px;color:var(--ink-light);letter-spacing:0.1em;margin-top:8px;">WILLING · 願受訪</div>
+        </div>
+      </div>
+
+      <p style="text-align:center;color:var(--ink-light);margin-bottom:48px;">
+        回覆率約 <strong style="color:var(--primary);">7.1%</strong>　·　
+        願意接受訪談者佔回覆者的 <strong style="color:var(--primary);">33.75%</strong>
+      </p>
+
+      <div class="callout">
+        <h4>關於 7.1% 的回覆率</h4>
+        <p style="margin-bottom:0;">
+          這個數字看起來不高，但對學生自主研究、沒有官方背書的調查來說其實算正常。
+          一位受訪者甚至直接告訴我們：「<mark>住宿型機構是個很封閉的地方，他們不太會有創新的想法</mark>」。
+          所以這 80 份回覆，其實是<strong>「願意思考這個議題」</strong>的一群人。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 受訪機構樣貌 -->
+<section class="section" id="who" style="background:var(--bg-alt);">
+  <div class="container-narrow">
+    <div class="reveal">
+      <div class="section-eyebrow">02 · RESPONDENTS</div>
+      <h2>誰回了這份問卷？</h2>
+
+      <h3>地理分布</h3>
+      <p>來自全台四個區域的機構都有回覆。北部最多，東部最少。</p>
+
+      <div class="region-grid reveal">
+        <div class="region-card">
+          <div class="region-name">北部</div>
+          <div class="region-count" data-count="34">0</div>
+          <div class="region-bar"><div class="region-bar-fill" data-width="100"></div></div>
+        </div>
+        <div class="region-card">
+          <div class="region-name">南部</div>
+          <div class="region-count" data-count="28">0</div>
+          <div class="region-bar"><div class="region-bar-fill" data-width="82"></div></div>
+        </div>
+        <div class="region-card">
+          <div class="region-name">中部</div>
+          <div class="region-count" data-count="17">0</div>
+          <div class="region-bar"><div class="region-bar-fill" data-width="50"></div></div>
+        </div>
+        <div class="region-card">
+          <div class="region-name">東部</div>
+          <div class="region-count" data-count="1">0</div>
+          <div class="region-bar"><div class="region-bar-fill" data-width="3"></div></div>
+        </div>
+      </div>
+
+      <h3>服務對象</h3>
+      <p>大部分機構同時服務多元對象。可以看到「高齡者」是台灣機構服務的主要族群，<strong>身心障礙者也占了 50 份</strong>。</p>
+
+      <div class="bar-chart reveal">
+        <div class="bar-item">
+          <div class="bar-label"><span>高齡者</span><span class="count">77</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="96"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>身心障礙者</span><span class="count">50</span></div>
+          <div class="bar-track"><div class="bar-fill accent" data-width="63"></div></div>
+        </div>
+      </div>
+
+      <h3>服務型態</h3>
+      <p>住宿型機構是主要回覆者，其次是日間照顧中心。這意味著我們的問卷觸及了<strong>各種規模、各種照顧密度</strong>的機構。</p>
+
+      <div class="bar-chart reveal">
+        <div class="bar-item">
+          <div class="bar-label"><span>住宿型機構（養老院／安養中心）</span><span class="count">43</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="100"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>日間照顧中心</span><span class="count">25</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="58"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>居家服務</span><span class="count">2</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="5"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>其他（家庭托顧、小規機、失智據點等）</span><span class="count">10</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="23"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 發現一：認知度 -->
+<section class="section" id="awareness">
+  <div class="container-narrow">
+    <div class="reveal">
+      <div class="section-eyebrow">FINDING 01 · AWARENESS</div>
+      <h2>發現一：絕大多數機構，<br>沒聽過「在地共生」</h2>
+      <p class="lead">
+        我們問：「您是否聽過日本『富山型』或『在地共生』這種讓不同障別、年齡層共融的服務模式？」<br>
+        從 1（完全沒聽過）到 5（非常熟悉）。
+      </p>
+
+      <div class="bar-chart reveal" style="margin:32px 0;">
+        <div class="likert-chart">
+          <div class="label">1<br><span style="font-size:11px;">完全沒聽過</span></div>
+          <div class="bar-track" style="height:32px;"><div class="bar-fill" data-width="100"></div></div>
+          <div class="count-num">26</div>
+        </div>
+        <div class="likert-chart">
+          <div class="label">2</div>
+          <div class="bar-track" style="height:32px;"><div class="bar-fill" data-width="50"></div></div>
+          <div class="count-num">13</div>
+        </div>
+        <div class="likert-chart">
+          <div class="label">3<br><span style="font-size:11px;">普通</span></div>
+          <div class="bar-track" style="height:32px;"><div class="bar-fill" data-width="100"></div></div>
+          <div class="count-num">26</div>
+        </div>
+        <div class="likert-chart">
+          <div class="label">4</div>
+          <div class="bar-track" style="height:32px;"><div class="bar-fill accent" data-width="46"></div></div>
+          <div class="count-num">12</div>
+        </div>
+        <div class="likert-chart">
+          <div class="label">5<br><span style="font-size:11px;">非常熟悉</span></div>
+          <div class="bar-track" style="height:32px;"><div class="bar-fill accent" data-width="11"></div></div>
+          <div class="count-num">3</div>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <div class="big-stat" style="font-size:64px;">48.8<sup>%</sup></div>
+          <p style="margin:8px 0 0;color:var(--ink-soft);">的機構選 1 或 2（不熟悉）</p>
+        </div>
+        <div class="card">
+          <div class="big-stat" style="font-size:64px;color:var(--accent);">18.8<sup>%</sup></div>
+          <p style="margin:8px 0 0;color:var(--ink-soft);">的機構選 4 或 5（熟悉）</p>
+        </div>
+      </div>
+
+      <p style="margin-top:32px;">
+        將近一半的台灣機構，從未聽過「在地共生」這個概念。
+        這個發現本身就說明了一件事：<mark>台灣的相關討論還非常不足</mark>。
+        要推動什麼之前，可能要先讓人「聽過」它。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 發現二：效益 vs 擔憂 -->
+<section class="section" id="pros-cons" style="background:var(--bg-alt);">
+  <div class="container-narrow">
+    <div class="reveal">
+      <div class="section-eyebrow">FINDING 02 · TENSION</div>
+      <h2>發現二：他們看見什麼好處，<br>又擔心什麼？</h2>
+      <p class="lead">
+        這是這份問卷最有意思的部分。我們同時問了「<strong>最大潛在效益</strong>」和「<strong>最大擔憂或阻礙</strong>」，
+        兩個題目都是複選。結果反映出機構心中的<mark>真實張力</mark>。
+      </p>
+
+      <h3 style="color:var(--primary);">✓ 機構看到的效益</h3>
+
+      <div class="bar-chart reveal">
+        <div class="bar-item">
+          <div class="bar-label">
+            <span>互助功能：身障青年陪伴長者、長者分享生命經驗</span>
+            <span class="count">61</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" data-width="100"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label">
+            <span>社會責任：促進社區融合，減少社會刻板印象</span>
+            <span class="count">51</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" data-width="84"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label">
+            <span>空間效益：設施與設備可共同使用，降低硬體成本</span>
+            <span class="count">43</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" data-width="70"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label">
+            <span>人力彈性：服務人員可跨對象彈性運用</span>
+            <span class="count">37</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" data-width="61"></div></div>
+        </div>
+      </div>
+
+      <p style="font-size:14px;color:var(--ink-light);margin-bottom:32px;">
+        最被認可的效益是「<strong>互助功能</strong>」——
+        61 份回覆都看見了身障者與長者可以彼此支持的可能。
+        這個結果與日本的「四助」理念高度吻合。
+      </p>
+
+      <hr class="divider">
+
+      <h3 style="color:var(--accent);">✗ 機構擔心的阻礙</h3>
+
+      <div class="bar-chart reveal">
+        <div class="bar-item">
+          <div class="bar-label">
+            <span>行政限制：長照與身障兩套體系法規不相容</span>
+            <span class="count">51</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill accent" data-width="100"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label">
+            <span>專業衝突：工作人員缺乏跨領域專業能力</span>
+            <span class="count">47</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill accent" data-width="92"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label">
+            <span>安全疑慮：擔心長者與身障者產生溝通誤解或肢體衝突</span>
+            <span class="count">44</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill accent" data-width="86"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label">
+            <span>生活節奏：兩者生活習慣不同，可能互相干擾</span>
+            <span class="count">44</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill accent" data-width="86"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label">
+            <span>家屬觀感：長者家屬可能排斥與身障者共同接受服務</span>
+            <span class="count">30</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill accent" data-width="59"></div></div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <h4>關鍵觀察</h4>
+        <p style="margin-bottom:0;">
+          最大的擔憂不是「身障者本身會帶來什麼問題」，而是<mark>「制度沒辦法配合」</mark>——
+          法規不相容、人員專業能力不足。
+          這呼應了訪談中反覆出現的「<strong>社政、衛政、勞政三套體系切割</strong>」議題。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 發現三：認知度 vs 意願 -->
+<section class="section" id="willingness">
+  <div class="container-narrow">
+    <div class="reveal">
+      <div class="section-eyebrow">FINDING 03 · WILLINGNESS</div>
+      <h2>發現三：意願其實比認知度高</h2>
+      <p class="lead">
+        雖然 48.8% 的機構不熟悉這個概念，<br>
+        但當我們假設「政府提供補助、法規鬆綁」之後，<strong>願意嘗試的人卻不少</strong>。
+      </p>
+
+      <div class="bar-chart reveal" style="margin:32px 0;">
+        <div class="likert-chart">
+          <div class="label">1<br><span style="font-size:11px;">完全不願意</span></div>
+          <div class="bar-track" style="height:32px;"><div class="bar-fill" data-width="39"></div></div>
+          <div class="count-num">11</div>
+        </div>
+        <div class="likert-chart">
+          <div class="label">2</div>
+          <div class="bar-track" style="height:32px;"><div class="bar-fill" data-width="32"></div></div>
+          <div class="count-num">9</div>
+        </div>
+        <div class="likert-chart">
+          <div class="label">3<br><span style="font-size:11px;">中立</span></div>
+          <div class="bar-track" style="height:32px;"><div class="bar-fill indigo" data-width="100"></div></div>
+          <div class="count-num">28</div>
+        </div>
+        <div class="likert-chart">
+          <div class="label">4</div>
+          <div class="bar-track" style="height:32px;"><div class="bar-fill accent" data-width="68"></div></div>
+          <div class="count-num">19</div>
+        </div>
+        <div class="likert-chart">
+          <div class="label">5<br><span style="font-size:11px;">非常願意</span></div>
+          <div class="bar-track" style="height:32px;"><div class="bar-fill accent" data-width="46"></div></div>
+          <div class="count-num">13</div>
+        </div>
+      </div>
+
+      <div class="pie-mock reveal">
+        <div class="seg" style="background:var(--primary);">
+          <div class="pct">25<sup style="font-size:0.5em;">%</sup></div>
+          <div class="name">不願意（1-2）</div>
+        </div>
+        <div class="seg" style="background:var(--indigo);">
+          <div class="pct">35<sup style="font-size:0.5em;">%</sup></div>
+          <div class="name">中立（3）</div>
+        </div>
+        <div class="seg" style="background:var(--accent);">
+          <div class="pct">40<sup style="font-size:0.5em;">%</sup></div>
+          <div class="name">願意（4-5）</div>
+        </div>
+      </div>
+
+      <p>
+        如果加上「中立」這群人，<mark>有 75% 的機構不是反對的</mark>。
+        這個比例其實很驚人——因為其中有將近一半連聽都沒聽過這個概念。
+      </p>
+
+      <p>
+        這給我們一個重要的啟示：<br>
+        <strong>共生服務在台灣不是「沒人想做」，而是「沒人知道怎麼做」</strong>。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 發現四：理想模式 -->
+<section class="section" id="model" style="background:var(--bg-alt);">
+  <div class="container-narrow">
+    <div class="reveal">
+      <div class="section-eyebrow">FINDING 04 · PREFERRED MODEL</div>
+      <h2>發現四：他們覺得該怎麼推？</h2>
+
+      <h3>跨領域人才應該怎麼培訓？</h3>
+      <p>機構意見分歧，但「<strong>高齡背景 + 加強特教</strong>」略佔多數。</p>
+
+      <div class="bar-chart reveal">
+        <div class="bar-item">
+          <div class="bar-label">
+            <span>具備「高齡」背景的人員，加強「特教」知識</span>
+            <span class="count">33</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" data-width="100"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label">
+            <span>由不同專業的團隊合作，不需特別跨領域</span>
+            <span class="count">24</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" data-width="73"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label">
+            <span>具備「特教」背景的人員，加強「高齡照護」知識</span>
+            <span class="count">23</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" data-width="70"></div></div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <h4>有趣對比</h4>
+        <p style="margin-bottom:0;">
+          但我們訪談的學者（特教領域）卻認為：「<strong>特教加高齡比較容易</strong>」。
+          理由是身障服務的個別差異太大，要從高齡背景去學身障，難度更高。
+          這個專業判斷與機構的直覺剛好相反，值得深思。
+        </p>
+      </div>
+
+      <hr class="divider">
+
+      <h3>共生模式應該從哪一層開始推？</h3>
+      <p>三個選項其實對應到嘉義實驗中提到的「<strong>融合三層次</strong>」：物理融合 → 活動融合 → 生活融合。</p>
+
+      <div class="bar-chart reveal">
+        <div class="bar-item">
+          <div class="bar-label">
+            <span>生活融合：完全共融，長者與身障者日常互相支持</span>
+            <span class="count">34</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill accent" data-width="100"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label">
+            <span>活動融合：定期舉辦共同參與的代間活動或課程</span>
+            <span class="count">32</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" data-width="94"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label">
+            <span>物理融合：僅共用同一棟建築或空間，服務區域分開</span>
+            <span class="count">14</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill indigo" data-width="41"></div></div>
+        </div>
+      </div>
+
+      <p>
+        有趣的是，機構並不傾向「最容易的物理融合」，而是更願意一步到位做<strong>生活融合或活動融合</strong>。
+        這可能反映了機構認為——既然要做，就做有意義的、有實質互動的。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 總結 -->
+<section class="section" id="summary">
+  <div class="container-narrow">
+    <div class="reveal">
+      <div class="section-eyebrow">SUMMARY · 摘要</div>
+      <h2>三個問卷帶給我們的洞察</h2>
+
+      <div class="highlight-box">
+        <h3>洞察 1：「沒聽過」≠「不願意」</h3>
+        <p>
+          雖然將近一半的機構不熟悉「在地共生」，但 75% 不反對嘗試。
+          推動的瓶頸不在認同感，而在<mark style="color:var(--ink);">資訊與支持系統的缺乏</mark>。
+        </p>
+      </div>
+
+      <div class="highlight-box" style="background:linear-gradient(135deg,rgba(217,119,87,0.95),rgba(217,119,87,0.85));">
+        <h3>洞察 2：制度問題大於人的問題</h3>
+        <p>
+          最大的擔憂是「法規不相容」與「專業跨域困難」，
+          而不是「身障者本身會造成什麼困擾」。
+          這代表如果<mark style="color:var(--ink);">把制度面的工作做好，實務面的障礙會大幅降低</mark>。
+        </p>
+      </div>
+
+      <div class="highlight-box" style="background:linear-gradient(135deg,rgba(58,90,122,0.95),rgba(58,90,122,0.85));">
+        <h3>洞察 3：機構期待的是「真融合」</h3>
+        <p>
+          相對於最容易實現的「物理融合」（共用空間），
+          機構更傾向「生活融合」與「活動融合」。
+          這顯示了——<mark style="color:var(--ink);">在台灣機構心中，共生不是擺著好看的口號，
+          而是要真的讓兩群人有互動的</mark>。
+        </p>
+      </div>
+
+      <p style="margin-top:48px;">
+        但問卷的限制也很明顯。我們只能知道機構「怎麼想」，
+        無法知道他們<strong>「為什麼」這樣想</strong>，更無法知道實際做起來會發生什麼事。
+      </p>
+      <p>
+        於是，我們進一步邀請了三位專家，做了深度訪談。
+      </p>
+
+      <p style="text-align:center;margin-top:48px;">
+        <a href="interview.html" style="display:inline-block;padding:14px 32px;background:var(--primary);color:#fff;border-radius:4px;font-weight:600;">
+          下一章：訪談研究 →
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <h4>關於本研究</h4>
+        <p>
+          這是一份國立臺灣師範大學的學生自主探究專題，<br>
+          完成於 2026 年春學期。我們相信，問題的開始，比答案更重要。
+        </p>
+      </div>
+      <div>
+        <h4>研究團隊</h4>
+        <ul>
+          <li>温佳縈</li>
+          <li>吳心伶</li>
+        </ul>
+      </div>
+      <div>
+        <h4>網站章節</h4>
+        <ul>
+          <li><a href="concept.html" style="color:rgba(255,255,255,0.7);">什麼是在地共生</a></li>
+          <li><a href="chiayi.html" style="color:rgba(255,255,255,0.7);">嘉義實驗</a></li>
+          <li><a href="survey.html" style="color:rgba(255,255,255,0.7);">問卷研究</a></li>
+          <li><a href="interview.html" style="color:rgba(255,255,255,0.7);">訪談研究</a></li>
+          <li><a href="future.html" style="color:rgba(255,255,255,0.7);">挑戰與展望</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 温佳縈・吳心伶｜國立臺灣師範大學自主探究</span>
+      <span>本網站內容引用之訪談已徵得受訪者同意並予以匿名處理</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+// 處理 region card 的進場動畫
+document.addEventListener('DOMContentLoaded', () => {
+  const regionObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.region-bar-fill').forEach(bar => {
+          const w = bar.getAttribute('data-width');
+          setTimeout(() => bar.style.width = w + '%', 200);
+        });
+        regionObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('.region-grid').forEach(el => regionObs.observe(el));
+});
+</script>
+</body>
+</html>
